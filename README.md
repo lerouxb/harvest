@@ -14,6 +14,8 @@ tl;dr
 
 Why an esp32 cam? So I can also use it to periodically take pictures and assemble them into a timelapse on the server.
 
+Since the attiny is running at nominally 5V-ish and the esp32 at a regulated 3.3V, there's a [level shifter](https://cdn-shop.adafruit.com/datasheets/an97055.pdf) for the i2c bus.
+
 The server also has an MQTT subscriber that stores the values in a mongo database that we can then pull out and graph.
 
 An obvious optimisation would be to not even bother turning the esp32 on or taking pictures after sunset and before sunrise.
